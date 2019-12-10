@@ -87,11 +87,11 @@ namespace HomesForSales
                 bool estateIsAdded = estateController.AddEstate(estate);
                 if (estateIsAdded)
                 {
-                    System.Windows.Forms.MessageBox.Show("House is added.");
+                    System.Windows.Forms.MessageBox.Show("Estate is added.");
                 }
                 else
                 {
-                    System.Windows.Forms.MessageBox.Show("An error occured when trying to add the house.");
+                    System.Windows.Forms.MessageBox.Show("An error occured when trying to add the estate.");
                 }
             }
 

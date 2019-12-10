@@ -23,3 +23,15 @@ C:\local_files\docs\Alex_assignemnt2\Assignment_2\HomesForSales\obj\Debug\PL.csp
 C:\local_files\docs\Alex_assignemnt2\Assignment_2\HomesForSales\obj\Debug\PL.csproj.CopyComplete
 C:\local_files\docs\Alex_assignemnt2\Assignment_2\HomesForSales\obj\Debug\HomesForSales.exe
 C:\local_files\docs\Alex_assignemnt2\Assignment_2\HomesForSales\obj\Debug\HomesForSales.pdb
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\bin\Debug\HomesForSales.exe.config
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\bin\Debug\HomesForSales.exe
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\bin\Debug\HomesForSales.pdb
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\bin\Debug\BLL.dll
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\bin\Debug\BLL.pdb
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\obj\Debug\PL.csprojAssemblyReference.cache
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\obj\Debug\HomesForSales.Form1.resources
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\obj\Debug\HomesForSales.Properties.Resources.resources
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\obj\Debug\PL.csproj.GenerateResource.cache
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\obj\Debug\PL.csproj.CopyComplete
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\obj\Debug\HomesForSales.exe
+C:\local_files\docs\AlexandraNormark_Assignment3\HomesForSales\obj\Debug\HomesForSales.pdb
