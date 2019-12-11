@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace HomesForSales.Models
 {
-   public class Address
+    [Serializable]
+    public class Address
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Street { get; set; }
         public string ZipCode { get; set; }
         public string City { get; set; }
         public Countries Country { get; set; }
 
-        public Address(int id, string street, string zipCode, string city, Countries country)
+        public Address(string id, string street, string zipCode, string city, Countries country)
         {
             Id = id;
             Street = street;

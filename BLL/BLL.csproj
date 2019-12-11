@@ -43,8 +43,11 @@
   <ItemGroup>
     <Compile Include="Controllers\AddressController.cs" />
     <Compile Include="Controllers\EstateController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\IAddressController.cs" />
     <Compile Include="Controllers\IEstateController.cs" />
+    <Compile Include="Controllers\IFileController.cs" />
+    <Compile Include="DAL\AddressManager.cs" />
     <Compile Include="DAL\EstateManager.cs" />
     <Compile Include="DAL\IListManager.cs" />
     <Compile Include="DAL\ListManager.cs" />

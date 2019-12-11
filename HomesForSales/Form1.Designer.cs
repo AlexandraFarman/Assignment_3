@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblEstateId = new System.Windows.Forms.Label();
-            this.lblCategory = new System.Windows.Forms.Label();
             this.lblType = new System.Windows.Forms.Label();
             this.lblLegalForm = new System.Windows.Forms.Label();
             this.textBoxEstateId = new System.Windows.Forms.TextBox();
@@ -45,14 +44,19 @@
             this.buttonAddEstate = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabAdd = new System.Windows.Forms.TabPage();
+            this.btnUpdateAddressAddEstate = new System.Windows.Forms.Button();
             this.comboBoxAddAddressToEstate = new System.Windows.Forms.ComboBox();
             this.lblAddAddressToEstate = new System.Windows.Forms.Label();
             this.buttonAddNewAddress = new System.Windows.Forms.Button();
             this.comboBoxAddType = new System.Windows.Forms.ComboBox();
-            this.comboBoxAddCategory = new System.Windows.Forms.ComboBox();
             this.comboBoxAddLegalForm = new System.Windows.Forms.ComboBox();
             this.comboBoxCountries = new System.Windows.Forms.ComboBox();
             this.tabManage = new System.Windows.Forms.TabPage();
+            this.btnUpdateAddressesChangeAddress = new System.Windows.Forms.Button();
+            this.btnUpdateAddressesChangeEstate = new System.Windows.Forms.Button();
+            this.btnUpdateEstatesDelete = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxChangeAddress = new System.Windows.Forms.ComboBox();
             this.labelDeleteEstate = new System.Windows.Forms.Label();
             this.labelEstateObject = new System.Windows.Forms.Label();
             this.comboBoxEstateObject = new System.Windows.Forms.ComboBox();
@@ -82,6 +86,10 @@
             this.lblStreetCurrent = new System.Windows.Forms.Label();
             this.lblZipCodeCurrent = new System.Windows.Forms.Label();
             this.tabFind = new System.Windows.Forms.TabPage();
+            this.textBoxFindCity = new System.Windows.Forms.TextBox();
+            this.textBoxFindZipcode = new System.Windows.Forms.TextBox();
+            this.textBoxFindStreet = new System.Windows.Forms.TextBox();
+            this.textBoxFindEstateId = new System.Windows.Forms.TextBox();
             this.buttonFind = new System.Windows.Forms.Button();
             this.comboBoxCountry = new System.Windows.Forms.ComboBox();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
@@ -97,17 +105,19 @@
             this.lblEstateIdFind = new System.Windows.Forms.Label();
             this.lblLegalFormFind = new System.Windows.Forms.Label();
             this.lblFindEstates = new System.Windows.Forms.Label();
-            this.textBoxFindEstateId = new System.Windows.Forms.TextBox();
-            this.textBoxFindStreet = new System.Windows.Forms.TextBox();
-            this.textBoxFindZipcode = new System.Windows.Forms.TextBox();
-            this.textBoxFindCity = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxChangeAddress = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.tabAdd.SuspendLayout();
             this.tabManage.SuspendLayout();
             this.tabFind.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstates)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEstateId
@@ -120,17 +130,6 @@
             this.lblEstateId.Size = new System.Drawing.Size(88, 20);
             this.lblEstateId.TabIndex = 0;
             this.lblEstateId.Text = "Estate ID";
-            // 
-            // lblCategory
-            // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.Location = new System.Drawing.Point(285, 209);
-            this.lblCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(84, 20);
-            this.lblCategory.TabIndex = 1;
-            this.lblCategory.Text = "Category";
             // 
             // lblType
             // 
@@ -157,7 +156,7 @@
             // textBoxEstateId
             // 
             this.textBoxEstateId.Location = new System.Drawing.Point(263, 135);
-            this.textBoxEstateId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEstateId.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEstateId.Name = "textBoxEstateId";
             this.textBoxEstateId.Size = new System.Drawing.Size(132, 26);
             this.textBoxEstateId.TabIndex = 4;
@@ -189,7 +188,7 @@
             // textBoxCity
             // 
             this.textBoxCity.Location = new System.Drawing.Point(995, 182);
-            this.textBoxCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(132, 26);
             this.textBoxCity.TabIndex = 17;
@@ -197,7 +196,7 @@
             // textBoxZipCode
             // 
             this.textBoxZipCode.Location = new System.Drawing.Point(793, 293);
-            this.textBoxZipCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxZipCode.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxZipCode.Name = "textBoxZipCode";
             this.textBoxZipCode.Size = new System.Drawing.Size(132, 26);
             this.textBoxZipCode.TabIndex = 15;
@@ -205,7 +204,7 @@
             // textBoxStreet
             // 
             this.textBoxStreet.Location = new System.Drawing.Point(793, 182);
-            this.textBoxStreet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxStreet.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxStreet.Name = "textBoxStreet";
             this.textBoxStreet.Size = new System.Drawing.Size(132, 26);
             this.textBoxStreet.TabIndex = 14;
@@ -258,7 +257,7 @@
             // 
             this.buttonAddEstate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddEstate.Location = new System.Drawing.Point(345, 423);
-            this.buttonAddEstate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddEstate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddEstate.Name = "buttonAddEstate";
             this.buttonAddEstate.Size = new System.Drawing.Size(164, 36);
             this.buttonAddEstate.TabIndex = 18;
@@ -273,7 +272,7 @@
             this.tabControl.Controls.Add(this.tabFind);
             this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl.Location = new System.Drawing.Point(-9, -6);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1443, 885);
@@ -282,18 +281,17 @@
             // tabAdd
             // 
             this.tabAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabAdd.Controls.Add(this.btnUpdateAddressAddEstate);
             this.tabAdd.Controls.Add(this.comboBoxAddAddressToEstate);
             this.tabAdd.Controls.Add(this.lblAddAddressToEstate);
             this.tabAdd.Controls.Add(this.buttonAddNewAddress);
             this.tabAdd.Controls.Add(this.comboBoxAddType);
-            this.tabAdd.Controls.Add(this.comboBoxAddCategory);
             this.tabAdd.Controls.Add(this.comboBoxAddLegalForm);
             this.tabAdd.Controls.Add(this.comboBoxCountries);
             this.tabAdd.Controls.Add(this.lblEstateInformation);
             this.tabAdd.Controls.Add(this.buttonAddEstate);
             this.tabAdd.Controls.Add(this.lblEstateId);
             this.tabAdd.Controls.Add(this.textBoxCity);
-            this.tabAdd.Controls.Add(this.lblCategory);
             this.tabAdd.Controls.Add(this.lblType);
             this.tabAdd.Controls.Add(this.textBoxZipCode);
             this.tabAdd.Controls.Add(this.lblLegalForm);
@@ -304,21 +302,32 @@
             this.tabAdd.Controls.Add(this.lblZipCode);
             this.tabAdd.Controls.Add(this.lblStreet);
             this.tabAdd.Controls.Add(this.lblAddress);
+            this.tabAdd.Controls.Add(this.menuStrip1);
             this.tabAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabAdd.Location = new System.Drawing.Point(4, 33);
-            this.tabAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAdd.Margin = new System.Windows.Forms.Padding(4);
             this.tabAdd.Name = "tabAdd";
-            this.tabAdd.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAdd.Padding = new System.Windows.Forms.Padding(4);
             this.tabAdd.Size = new System.Drawing.Size(1435, 848);
             this.tabAdd.TabIndex = 0;
             this.tabAdd.Text = "Add new";
             this.tabAdd.Click += new System.EventHandler(this.tabAdd_Click);
             // 
+            // btnUpdateAddressAddEstate
+            // 
+            this.btnUpdateAddressAddEstate.Location = new System.Drawing.Point(120, 351);
+            this.btnUpdateAddressAddEstate.Name = "btnUpdateAddressAddEstate";
+            this.btnUpdateAddressAddEstate.Size = new System.Drawing.Size(136, 28);
+            this.btnUpdateAddressAddEstate.TabIndex = 26;
+            this.btnUpdateAddressAddEstate.Text = "Update list";
+            this.btnUpdateAddressAddEstate.UseVisualStyleBackColor = true;
+            this.btnUpdateAddressAddEstate.Click += new System.EventHandler(this.btnUpdateAddressAddEstate_Click);
+            // 
             // comboBoxAddAddressToEstate
             // 
             this.comboBoxAddAddressToEstate.FormattingEnabled = true;
             this.comboBoxAddAddressToEstate.Location = new System.Drawing.Point(263, 351);
-            this.comboBoxAddAddressToEstate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAddAddressToEstate.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAddAddressToEstate.Name = "comboBoxAddAddressToEstate";
             this.comboBoxAddAddressToEstate.Size = new System.Drawing.Size(337, 28);
             this.comboBoxAddAddressToEstate.TabIndex = 25;
@@ -338,7 +347,7 @@
             // 
             this.buttonAddNewAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddNewAddress.Location = new System.Drawing.Point(880, 423);
-            this.buttonAddNewAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddNewAddress.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddNewAddress.Name = "buttonAddNewAddress";
             this.buttonAddNewAddress.Size = new System.Drawing.Size(176, 36);
             this.buttonAddNewAddress.TabIndex = 23;
@@ -350,25 +359,16 @@
             // 
             this.comboBoxAddType.FormattingEnabled = true;
             this.comboBoxAddType.Location = new System.Drawing.Point(452, 246);
-            this.comboBoxAddType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAddType.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAddType.Name = "comboBoxAddType";
             this.comboBoxAddType.Size = new System.Drawing.Size(148, 28);
             this.comboBoxAddType.TabIndex = 22;
-            // 
-            // comboBoxAddCategory
-            // 
-            this.comboBoxAddCategory.FormattingEnabled = true;
-            this.comboBoxAddCategory.Location = new System.Drawing.Point(263, 246);
-            this.comboBoxAddCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxAddCategory.Name = "comboBoxAddCategory";
-            this.comboBoxAddCategory.Size = new System.Drawing.Size(132, 28);
-            this.comboBoxAddCategory.TabIndex = 21;
             // 
             // comboBoxAddLegalForm
             // 
             this.comboBoxAddLegalForm.FormattingEnabled = true;
             this.comboBoxAddLegalForm.Location = new System.Drawing.Point(452, 135);
-            this.comboBoxAddLegalForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxAddLegalForm.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAddLegalForm.Name = "comboBoxAddLegalForm";
             this.comboBoxAddLegalForm.Size = new System.Drawing.Size(148, 28);
             this.comboBoxAddLegalForm.TabIndex = 20;
@@ -377,7 +377,7 @@
             // 
             this.comboBoxCountries.FormattingEnabled = true;
             this.comboBoxCountries.Location = new System.Drawing.Point(995, 290);
-            this.comboBoxCountries.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxCountries.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCountries.Name = "comboBoxCountries";
             this.comboBoxCountries.Size = new System.Drawing.Size(132, 28);
             this.comboBoxCountries.TabIndex = 19;
@@ -385,6 +385,9 @@
             // tabManage
             // 
             this.tabManage.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabManage.Controls.Add(this.btnUpdateAddressesChangeAddress);
+            this.tabManage.Controls.Add(this.btnUpdateAddressesChangeEstate);
+            this.tabManage.Controls.Add(this.btnUpdateEstatesDelete);
             this.tabManage.Controls.Add(this.label1);
             this.tabManage.Controls.Add(this.comboBoxChangeAddress);
             this.tabManage.Controls.Add(this.labelDeleteEstate);
@@ -416,12 +419,62 @@
             this.tabManage.Controls.Add(this.lblStreetCurrent);
             this.tabManage.Controls.Add(this.lblZipCodeCurrent);
             this.tabManage.Location = new System.Drawing.Point(4, 33);
-            this.tabManage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabManage.Margin = new System.Windows.Forms.Padding(4);
             this.tabManage.Name = "tabManage";
-            this.tabManage.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabManage.Padding = new System.Windows.Forms.Padding(4);
             this.tabManage.Size = new System.Drawing.Size(1435, 848);
             this.tabManage.TabIndex = 1;
             this.tabManage.Text = "Manage Estates";
+            // 
+            // btnUpdateAddressesChangeAddress
+            // 
+            this.btnUpdateAddressesChangeAddress.Location = new System.Drawing.Point(961, 141);
+            this.btnUpdateAddressesChangeAddress.Name = "btnUpdateAddressesChangeAddress";
+            this.btnUpdateAddressesChangeAddress.Size = new System.Drawing.Size(107, 28);
+            this.btnUpdateAddressesChangeAddress.TabIndex = 73;
+            this.btnUpdateAddressesChangeAddress.Text = "Update list";
+            this.btnUpdateAddressesChangeAddress.UseVisualStyleBackColor = true;
+            this.btnUpdateAddressesChangeAddress.Click += new System.EventHandler(this.btnUpdateAddressesChangeAddress_Click);
+            // 
+            // btnUpdateAddressesChangeEstate
+            // 
+            this.btnUpdateAddressesChangeEstate.Location = new System.Drawing.Point(7, 335);
+            this.btnUpdateAddressesChangeEstate.Name = "btnUpdateAddressesChangeEstate";
+            this.btnUpdateAddressesChangeEstate.Size = new System.Drawing.Size(107, 28);
+            this.btnUpdateAddressesChangeEstate.TabIndex = 72;
+            this.btnUpdateAddressesChangeEstate.Text = "Update list";
+            this.btnUpdateAddressesChangeEstate.UseVisualStyleBackColor = true;
+            this.btnUpdateAddressesChangeEstate.Click += new System.EventHandler(this.btnUpdateAddressesChangeEstate_Click);
+            // 
+            // btnUpdateEstatesDelete
+            // 
+            this.btnUpdateEstatesDelete.Location = new System.Drawing.Point(1116, 265);
+            this.btnUpdateEstatesDelete.Name = "btnUpdateEstatesDelete";
+            this.btnUpdateEstatesDelete.Size = new System.Drawing.Size(177, 34);
+            this.btnUpdateEstatesDelete.TabIndex = 71;
+            this.btnUpdateEstatesDelete.Text = "Update list";
+            this.btnUpdateEstatesDelete.UseVisualStyleBackColor = true;
+            this.btnUpdateEstatesDelete.Click += new System.EventHandler(this.btnUpdateEstatesDelete_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(720, 101);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "Address";
+            // 
+            // comboBoxChangeAddress
+            // 
+            this.comboBoxChangeAddress.FormattingEnabled = true;
+            this.comboBoxChangeAddress.Location = new System.Drawing.Point(598, 141);
+            this.comboBoxChangeAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxChangeAddress.Name = "comboBoxChangeAddress";
+            this.comboBoxChangeAddress.Size = new System.Drawing.Size(356, 32);
+            this.comboBoxChangeAddress.TabIndex = 69;
             // 
             // labelDeleteEstate
             // 
@@ -450,7 +503,7 @@
             // 
             this.comboBoxEstateObject.FormattingEnabled = true;
             this.comboBoxEstateObject.Location = new System.Drawing.Point(1036, 226);
-            this.comboBoxEstateObject.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxEstateObject.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxEstateObject.Name = "comboBoxEstateObject";
             this.comboBoxEstateObject.Size = new System.Drawing.Size(356, 32);
             this.comboBoxEstateObject.TabIndex = 66;
@@ -459,7 +512,7 @@
             // 
             this.buttonChangeAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChangeAddress.Location = new System.Drawing.Point(707, 435);
-            this.buttonChangeAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonChangeAddress.Margin = new System.Windows.Forms.Padding(4);
             this.buttonChangeAddress.Name = "buttonChangeAddress";
             this.buttonChangeAddress.Size = new System.Drawing.Size(164, 36);
             this.buttonChangeAddress.TabIndex = 65;
@@ -471,7 +524,7 @@
             // 
             this.comboBoxCountryChange.FormattingEnabled = true;
             this.comboBoxCountryChange.Location = new System.Drawing.Point(799, 340);
-            this.comboBoxCountryChange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxCountryChange.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCountryChange.Name = "comboBoxCountryChange";
             this.comboBoxCountryChange.Size = new System.Drawing.Size(132, 32);
             this.comboBoxCountryChange.TabIndex = 64;
@@ -503,7 +556,7 @@
             // 
             this.comboBoxChangeAddressForEstate.FormattingEnabled = true;
             this.comboBoxChangeAddressForEstate.Location = new System.Drawing.Point(117, 334);
-            this.comboBoxChangeAddressForEstate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxChangeAddressForEstate.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxChangeAddressForEstate.Name = "comboBoxChangeAddressForEstate";
             this.comboBoxChangeAddressForEstate.Size = new System.Drawing.Size(356, 32);
             this.comboBoxChangeAddressForEstate.TabIndex = 61;
@@ -512,7 +565,7 @@
             // 
             this.comboBoxChangeType.FormattingEnabled = true;
             this.comboBoxChangeType.Location = new System.Drawing.Point(117, 217);
-            this.comboBoxChangeType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxChangeType.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxChangeType.Name = "comboBoxChangeType";
             this.comboBoxChangeType.Size = new System.Drawing.Size(160, 32);
             this.comboBoxChangeType.TabIndex = 60;
@@ -521,7 +574,7 @@
             // 
             this.comboBoxChangeLegalForm.FormattingEnabled = true;
             this.comboBoxChangeLegalForm.Location = new System.Drawing.Point(313, 127);
-            this.comboBoxChangeLegalForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxChangeLegalForm.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxChangeLegalForm.Name = "comboBoxChangeLegalForm";
             this.comboBoxChangeLegalForm.Size = new System.Drawing.Size(160, 32);
             this.comboBoxChangeLegalForm.TabIndex = 58;
@@ -530,7 +583,7 @@
             // 
             this.comboBoxChangeEstateId.FormattingEnabled = true;
             this.comboBoxChangeEstateId.Location = new System.Drawing.Point(117, 127);
-            this.comboBoxChangeEstateId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxChangeEstateId.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxChangeEstateId.Name = "comboBoxChangeEstateId";
             this.comboBoxChangeEstateId.Size = new System.Drawing.Size(160, 32);
             this.comboBoxChangeEstateId.TabIndex = 57;
@@ -550,7 +603,7 @@
             // 
             this.buttonChangeEstate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChangeEstate.Location = new System.Drawing.Point(204, 393);
-            this.buttonChangeEstate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonChangeEstate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonChangeEstate.Name = "buttonChangeEstate";
             this.buttonChangeEstate.Size = new System.Drawing.Size(177, 36);
             this.buttonChangeEstate.TabIndex = 55;
@@ -572,7 +625,7 @@
             // textBoxCityChange
             // 
             this.textBoxCityChange.Location = new System.Drawing.Point(799, 229);
-            this.textBoxCityChange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCityChange.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCityChange.Name = "textBoxCityChange";
             this.textBoxCityChange.Size = new System.Drawing.Size(132, 29);
             this.textBoxCityChange.TabIndex = 54;
@@ -591,7 +644,7 @@
             // textBoxZipCodeChange
             // 
             this.textBoxZipCodeChange.Location = new System.Drawing.Point(598, 340);
-            this.textBoxZipCodeChange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxZipCodeChange.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxZipCodeChange.Name = "textBoxZipCodeChange";
             this.textBoxZipCodeChange.Size = new System.Drawing.Size(132, 29);
             this.textBoxZipCodeChange.TabIndex = 52;
@@ -610,7 +663,7 @@
             // textBoxStreetChange
             // 
             this.textBoxStreetChange.Location = new System.Drawing.Point(598, 229);
-            this.textBoxStreetChange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxStreetChange.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxStreetChange.Name = "textBoxStreetChange";
             this.textBoxStreetChange.Size = new System.Drawing.Size(132, 29);
             this.textBoxStreetChange.TabIndex = 51;
@@ -665,7 +718,7 @@
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonDelete.Location = new System.Drawing.Point(1116, 393);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(177, 36);
             this.buttonDelete.TabIndex = 38;
@@ -736,18 +789,50 @@
             this.tabFind.Controls.Add(this.lblLegalFormFind);
             this.tabFind.Controls.Add(this.lblFindEstates);
             this.tabFind.Location = new System.Drawing.Point(4, 33);
-            this.tabFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabFind.Margin = new System.Windows.Forms.Padding(4);
             this.tabFind.Name = "tabFind";
-            this.tabFind.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabFind.Padding = new System.Windows.Forms.Padding(4);
             this.tabFind.Size = new System.Drawing.Size(1435, 848);
             this.tabFind.TabIndex = 2;
             this.tabFind.Text = "FindEstates";
+            // 
+            // textBoxFindCity
+            // 
+            this.textBoxFindCity.Location = new System.Drawing.Point(287, 463);
+            this.textBoxFindCity.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFindCity.Name = "textBoxFindCity";
+            this.textBoxFindCity.Size = new System.Drawing.Size(160, 29);
+            this.textBoxFindCity.TabIndex = 55;
+            // 
+            // textBoxFindZipcode
+            // 
+            this.textBoxFindZipcode.Location = new System.Drawing.Point(287, 409);
+            this.textBoxFindZipcode.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFindZipcode.Name = "textBoxFindZipcode";
+            this.textBoxFindZipcode.Size = new System.Drawing.Size(160, 29);
+            this.textBoxFindZipcode.TabIndex = 54;
+            // 
+            // textBoxFindStreet
+            // 
+            this.textBoxFindStreet.Location = new System.Drawing.Point(287, 346);
+            this.textBoxFindStreet.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFindStreet.Name = "textBoxFindStreet";
+            this.textBoxFindStreet.Size = new System.Drawing.Size(160, 29);
+            this.textBoxFindStreet.TabIndex = 53;
+            // 
+            // textBoxFindEstateId
+            // 
+            this.textBoxFindEstateId.Location = new System.Drawing.Point(287, 106);
+            this.textBoxFindEstateId.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxFindEstateId.Name = "textBoxFindEstateId";
+            this.textBoxFindEstateId.Size = new System.Drawing.Size(160, 29);
+            this.textBoxFindEstateId.TabIndex = 52;
             // 
             // buttonFind
             // 
             this.buttonFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFind.Location = new System.Drawing.Point(225, 609);
-            this.buttonFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFind.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFind.Name = "buttonFind";
             this.buttonFind.Size = new System.Drawing.Size(123, 31);
             this.buttonFind.TabIndex = 48;
@@ -759,7 +844,7 @@
             // 
             this.comboBoxCountry.FormattingEnabled = true;
             this.comboBoxCountry.Location = new System.Drawing.Point(287, 514);
-            this.comboBoxCountry.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxCountry.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCountry.Name = "comboBoxCountry";
             this.comboBoxCountry.Size = new System.Drawing.Size(160, 32);
             this.comboBoxCountry.TabIndex = 46;
@@ -768,7 +853,7 @@
             // 
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Location = new System.Drawing.Point(287, 290);
-            this.comboBoxType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxType.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(160, 32);
             this.comboBoxType.TabIndex = 43;
@@ -777,7 +862,7 @@
             // 
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(287, 234);
-            this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxCategory.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(160, 32);
             this.comboBoxCategory.TabIndex = 42;
@@ -786,7 +871,7 @@
             // 
             this.comboBoxLegalForm.FormattingEnabled = true;
             this.comboBoxLegalForm.Location = new System.Drawing.Point(287, 169);
-            this.comboBoxLegalForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxLegalForm.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxLegalForm.Name = "comboBoxLegalForm";
             this.comboBoxLegalForm.Size = new System.Drawing.Size(160, 32);
             this.comboBoxLegalForm.TabIndex = 41;
@@ -795,7 +880,7 @@
             // 
             this.dataGridViewEstates.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEstates.Location = new System.Drawing.Point(497, 112);
-            this.dataGridViewEstates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridViewEstates.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewEstates.Name = "dataGridViewEstates";
             this.dataGridViewEstates.RowHeadersWidth = 51;
             this.dataGridViewEstates.Size = new System.Drawing.Size(864, 405);
@@ -900,57 +985,62 @@
             this.lblFindEstates.TabIndex = 30;
             this.lblFindEstates.Text = "Find Estates";
             // 
-            // textBoxFindEstateId
+            // menuStrip1
             // 
-            this.textBoxFindEstateId.Location = new System.Drawing.Point(287, 106);
-            this.textBoxFindEstateId.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxFindEstateId.Name = "textBoxFindEstateId";
-            this.textBoxFindEstateId.Size = new System.Drawing.Size(160, 29);
-            this.textBoxFindEstateId.TabIndex = 52;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFile});
+            this.menuStrip1.Location = new System.Drawing.Point(4, 4);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1427, 30);
+            this.menuStrip1.TabIndex = 27;
             // 
-            // textBoxFindStreet
+            // mnuFile
             // 
-            this.textBoxFindStreet.Location = new System.Drawing.Point(287, 346);
-            this.textBoxFindStreet.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxFindStreet.Name = "textBoxFindStreet";
-            this.textBoxFindStreet.Size = new System.Drawing.Size(160, 29);
-            this.textBoxFindStreet.TabIndex = 53;
+            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileNew,
+            this.mnuFileOpen,
+            this.mnuFileSave,
+            this.mnuFileSaveAs,
+            this.mnuFileExit});
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(46, 26);
+            this.mnuFile.Text = "File";
             // 
-            // textBoxFindZipcode
+            // mnuFileNew
             // 
-            this.textBoxFindZipcode.Location = new System.Drawing.Point(287, 409);
-            this.textBoxFindZipcode.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxFindZipcode.Name = "textBoxFindZipcode";
-            this.textBoxFindZipcode.Size = new System.Drawing.Size(160, 29);
-            this.textBoxFindZipcode.TabIndex = 54;
+            this.mnuFileNew.Name = "mnuFileNew";
+            this.mnuFileNew.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileNew.Text = "New";
+            this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
             // 
-            // textBoxFindCity
+            // mnuFileOpen
             // 
-            this.textBoxFindCity.Location = new System.Drawing.Point(287, 463);
-            this.textBoxFindCity.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxFindCity.Name = "textBoxFindCity";
-            this.textBoxFindCity.Size = new System.Drawing.Size(160, 29);
-            this.textBoxFindCity.TabIndex = 55;
+            this.mnuFileOpen.Name = "mnuFileOpen";
+            this.mnuFileOpen.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileOpen.Text = "Open";
+            this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
-            // label1
+            // mnuFileSave
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(720, 101);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "Address";
+            this.mnuFileSave.Name = "mnuFileSave";
+            this.mnuFileSave.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileSave.Text = "Save";
+            this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
             // 
-            // comboBoxChangeAddress
+            // mnuFileSaveAs
             // 
-            this.comboBoxChangeAddress.FormattingEnabled = true;
-            this.comboBoxChangeAddress.Location = new System.Drawing.Point(598, 141);
-            this.comboBoxChangeAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxChangeAddress.Name = "comboBoxChangeAddress";
-            this.comboBoxChangeAddress.Size = new System.Drawing.Size(356, 32);
-            this.comboBoxChangeAddress.TabIndex = 69;
+            this.mnuFileSaveAs.Name = "mnuFileSaveAs";
+            this.mnuFileSaveAs.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileSaveAs.Text = "Save as";
+            this.mnuFileSaveAs.Click += new System.EventHandler(this.mnuFileSaveAs_Click);
+            // 
+            // mnuFileExit
+            // 
+            this.mnuFileExit.Name = "mnuFileExit";
+            this.mnuFileExit.Size = new System.Drawing.Size(224, 26);
+            this.mnuFileExit.Text = "Exit";
+            this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
             // Form1
             // 
@@ -958,7 +1048,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1415, 794);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Homes For Sales";
             this.tabControl.ResumeLayout(false);
@@ -969,6 +1060,8 @@
             this.tabFind.ResumeLayout(false);
             this.tabFind.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEstates)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -976,7 +1069,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblEstateId;
-        private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Label lblLegalForm;
         private System.Windows.Forms.TextBox textBoxEstateId;
@@ -1027,7 +1119,6 @@
         private System.Windows.Forms.ComboBox comboBoxLegalForm;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.ComboBox comboBoxCountries;
-        private System.Windows.Forms.ComboBox comboBoxAddCategory;
         private System.Windows.Forms.ComboBox comboBoxAddLegalForm;
         private System.Windows.Forms.ComboBox comboBoxAddAddressToEstate;
         private System.Windows.Forms.Label lblAddAddressToEstate;
@@ -1050,6 +1141,17 @@
         private System.Windows.Forms.TextBox textBoxFindEstateId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxChangeAddress;
+        private System.Windows.Forms.Button btnUpdateAddressAddEstate;
+        private System.Windows.Forms.Button btnUpdateEstatesDelete;
+        private System.Windows.Forms.Button btnUpdateAddressesChangeEstate;
+        private System.Windows.Forms.Button btnUpdateAddressesChangeAddress;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuFile;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileNew;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileOpen;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileSave;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileSaveAs;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
     }
 }
 

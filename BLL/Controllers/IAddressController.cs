@@ -13,6 +13,5 @@ namespace BLL.Controllers
         bool AddAddress(Address address);
         bool UpdateAddress(Address address);
         bool DeleteAddress(Address address);
-        bool SearchAddress(Address address);
     }
 }

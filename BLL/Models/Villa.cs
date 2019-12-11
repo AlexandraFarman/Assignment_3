@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomesForSales.Models
 {
+    [Serializable]
     public class Villa : Residential
     {
         public Villa(LegalForm legalForm, Address address, string estateId) : base(estateId, legalForm, address)

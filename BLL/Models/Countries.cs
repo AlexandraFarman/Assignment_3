@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomesForSales.Models
 {
+    [Serializable]
     public enum Countries
     {
         Afghanistan,

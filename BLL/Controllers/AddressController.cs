@@ -1,4 +1,5 @@
-﻿using HomesForSales.Models;
+﻿using BLL.DAL;
+using HomesForSales.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,31 +10,51 @@ namespace BLL.Controllers
 {
     public class AddressController : IAddressController
     {
+        private readonly AddressManager _addressManager;
+
+        public AddressController(AddressManager am)
+        {
+            _addressManager = am;
+        }
+
         public bool AddAddress(Address address)
         {
-            return true;
+            return _addressManager.Add(address);
         }
 
         public bool UpdateAddress(Address address)
         {
-            return true;
+            int index = SearchAddressById(address.Id);
+            if (index < 0)
+                return false;
+
+            Address addressCopy = CopyAddress(address);
+            return _addressManager.ChangeAt(addressCopy, index);
         }
 
         public bool DeleteAddress(Address address)
         {
-            return true;
-        }
-        public bool SearchAddress(Address address)
-        {
-            return true;
+            int index = SearchAddressById(address.Id);
+            if (index < 0)
+                return false;
+
+            return _addressManager.DeleteAt(index);
         }
 
         public List<Address> GetAllAddresses()
         {
-            List<Address> addresses = new List<Address>();
-            addresses.Add(new Address(1, "Exempelgata 1", "12345", "Malmö", Countries.Angola));
-            addresses.Add(new Address(2, "Exempelgata 2", "444444", "Malmö", Countries.Armenia));
-            return addresses;
+            return _addressManager.GetAll();
+        }
+
+        private int SearchAddressById(string addressId)
+        {
+            return _addressManager.GetAll().FindIndex(e => e.Id == addressId);
+        }
+
+        private Address CopyAddress(Address address)
+        {
+            Address addressCopy = new Address(address.Id, address.Street, address.ZipCode, address.City, address.Country);
+            return addressCopy;
         }
     }
 }

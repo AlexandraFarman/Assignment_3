@@ -37,7 +37,7 @@ namespace BLL.DAL
                 {
                     _list = (List<T>)binaryFormatter.Deserialize(streamReader.BaseStream);
                 }
-                catch (SerializationException)
+                catch (SerializationException e)
                 {
                     return false;
                 }
@@ -121,11 +121,6 @@ namespace BLL.DAL
             if (_list == null) return null;
 
             return _list.Select(i => i.ToString()).ToList<string>();
-        }
-
-        public void Reset()
-        {
-
         }
     }
 }
